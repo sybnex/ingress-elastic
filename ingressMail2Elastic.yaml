@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: ingress-mail-elastic
+spec:
+  replicas: 1
+  selector:
+    name: ingress-mail-elastic
+  template:
+    metadata:
+      labels:
+        name: ingress-mail-elastic
+    spec:
+      containers:
+      - name: ingress-mail-elastic
+        image: sybex/ingress-mail-elastic:0.11
+        env:
+          - name:  ELASTICSERVER
+            value: ""
+          - name:  ELASTICINDEX
+            value: ""
+          - name:  MAILSERVER
+            value: ""
+          - name:  MAILPORT
+            value: ""
+          - name:  MAILUSER
+            value: ""
+          - name:  MAILPASS
+            value: ""
+          - name:  SLEEPTIMER
+            value: ""
