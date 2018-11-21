@@ -3,7 +3,7 @@ FROM alpine
 RUN \
     apk --no-cache add py-pip py-dateutil && \
     pip install --upgrade pip && \
-    pip install elasticsearch>=5.0.0,<6.0.0 pytz
+    pip install elasticsearch==5.5.3 pytz
 
 ENV ELASTICSERVER="192.168.0.1" \
     ELASTICINDEX="example" \
