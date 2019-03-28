@@ -5,3 +5,8 @@ stages:
       dockerfilePath: ./Dockerfile
       buildContext: .
       tag: sybex/ingress-elastic:${CICD_EXECUTION_SEQUENCE}
+      pushRemote: true
+      registry: index.docker.io
+  - applyYamlConfig:
+      path: ./ingressMail2Elastic.yaml
+notification: {}
