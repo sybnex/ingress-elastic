@@ -1,16 +1,1 @@
-stages:
-- name: Publish
-  steps:
-  - publishImageConfig:
-      dockerfilePath: ./Dockerfile
-      buildContext: .
-      tag: sybex/ingress-elastic:${CICD_EXECUTION_SEQUENCE}
-      pushRemote: true
-      registry: index.docker.io
-    env:
-      PLUGIN_DEBUG: "true"  
-- name: Deploy
-  steps:
-  - applyYamlConfig:
-      path: ./ingressMail2Elastic.yaml
 notification: {}
