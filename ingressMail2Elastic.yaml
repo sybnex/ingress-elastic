@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ingress-mail-elastic
-        image: sybex/ingress-mail-elastic:${CICD_EXECUTION_SEQUENCE}
+        image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
         env:
           - name:  ELASTICSERVER
             value: ""
